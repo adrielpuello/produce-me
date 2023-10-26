@@ -32,7 +32,7 @@
   
   .login-button {
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #e100ff;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -41,7 +41,7 @@
   }
   
   .login-button:hover {
-    background-color: #0056b3;
+    background-color: #7c1f88;
   }
 
 /* sidebar styles */
@@ -69,7 +69,7 @@
 
 .sidebar button {
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #e100ff;
     color: #fff;
     border: none;
     cursor: pointer;
@@ -78,7 +78,7 @@
 }
 
 .sidebar button:hover {
-    background-color: #0056b3;
+    background-color: #7c1f88;
 }
 
 .sidebar.expanded ul{
@@ -91,4 +91,81 @@
 
 .sidebar.expanded button{
     width: 100%;
+}
+
+/* Landing Page Styles */
+/* Reset some default styles */
+body, h1, h2, p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the header and navigation bar */
+.header {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+}
+
+/* Style the sections */
+.section {
+  padding: 100px 0;
+  text-align: center;
+}
+
+.section-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1, h2 {
+  color: #333;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #555;
+}
+
+/* Style the footer */
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* Style the landing page */
+#btn-1 {
+  width: 200px;
+  padding: 10px;
+  margin: 20px;
+}
+
+.p-landingpage{
+  margin: 15px;
+}
+
+#new-user {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  text-decoration: underline;
+  color: #e100ff;
+  cursor: pointer;
 }

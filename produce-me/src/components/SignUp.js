@@ -1,18 +1,19 @@
 import React, { useState } from "react";
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 
-const Login = ({ auth }) => {
+const Login = ({ auth, handleLogin, setUser, setPage }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     createUserWithEmailAndPassword(auth, email, password)
       .then(cred => {
         console.log('user registered:', cred.user);
         setEmail('');
         setPassword('');
+        setUser({});
+        setPage('landing page');
       })
       .catch(err => {
         console.log(err.message);
@@ -40,7 +41,7 @@ const Login = ({ auth }) => {
               placeholder="Password"
             />
         </div>
-      <button className="login-button" type="submit">Sign Up</button>
+      <button className="login-button" type="submit" onClick={handleLogin}>Sign Up</button>
       </form>
     </div>
 

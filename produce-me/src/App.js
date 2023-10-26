@@ -1,8 +1,9 @@
 import './App.css';
-import React from 'react'
+import React, { useState } from 'react'
 import SignUp from './components/SignUp';
 import Login from './components/Login';
 import Navbar from './components/Navbar';
+import LandingPage from './components/LandingPage';
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
@@ -31,11 +32,28 @@ const auth = getAuth();
 
 const App = () => {
 
+  const [user, setUser] = useState(null);
+  const [page, setPage] = useState('landing page')
+
+  const handleLogin = () => {
+    setTimeout(() => {
+      if (!user) {
+        console.log(user)
+        return;
+      } else {
+        setUser({});
+        console.log(user);
+      }
+    }, 500);
+    
+  }
+
   return (
       <div className="app">
-        <Navbar auth={auth}/>
-        <SignUp auth={auth}/>
-        <Login auth={auth}/>
+        <Navbar auth={auth} user={user} setUser={setUser} setPage={setPage}/>
+        {page==='landing page' ? <LandingPage auth={auth} handleLogin={handleLogin} user={user} setUser={setUser} setPage={setPage}/> : <></>};
+        {page==='signup' ? <SignUp auth={auth} handleLogin={handleLogin} setUser={setUser} setPage={setPage}/> : <></>}
+        {page==='login' ? <Login auth={auth} handleLogin={handleLogin} setUser={setUser} setPage={setPage}/> : <></>}
       </div>
   );
 }
