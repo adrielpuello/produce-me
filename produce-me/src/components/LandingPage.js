@@ -35,10 +35,6 @@ function LandingPage({ user, setPage }) {
         <div className="section-content">
         </div>
       </section>
-
-      <footer className="footer">
-        <p>&copy; 2023 ProduceMe</p>
-      </footer>
     </div>
   );
 }

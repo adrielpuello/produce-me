@@ -4,6 +4,7 @@ import SignUp from './components/SignUp';
 import Login from './components/Login';
 import Navbar from './components/Navbar';
 import LandingPage from './components/LandingPage';
+import Artists from './components/Artists';
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
@@ -32,7 +33,7 @@ const auth = getAuth();
 
 const App = () => {
 
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState({});
   const [page, setPage] = useState('landing page')
 
   const handleLogin = () => {
@@ -54,6 +55,7 @@ const App = () => {
         {page==='landing page' ? <LandingPage auth={auth} handleLogin={handleLogin} user={user} setUser={setUser} setPage={setPage}/> : <></>};
         {page==='signup' ? <SignUp auth={auth} handleLogin={handleLogin} setUser={setUser} setPage={setPage}/> : <></>}
         {page==='login' ? <Login auth={auth} handleLogin={handleLogin} setUser={setUser} setPage={setPage}/> : <></>}
+        {page==='artists' ? <Artists /> : <></>}
       </div>
   );
 }
